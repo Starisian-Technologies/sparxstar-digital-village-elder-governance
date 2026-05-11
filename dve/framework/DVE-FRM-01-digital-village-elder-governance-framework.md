@@ -14,7 +14,7 @@ CONFIDENTIAL · PATENT PENDING
 | Classification | CONFIDENTIAL · PATENT PENDING |
 | Date | May 2026 |
 | Issuing Authority | Joint — AI West Africa and Starisian Technologies |
-| Cross-Reference | AIWA-DOC-01, AIWA-DOC-02, AIWA-DOC-03, STAR-POL-01, STAR-POL-02, STAR-POL-03, STAR-POL-04 |
+| Cross-Reference | AIWA-DOC-01, AIWA-DOC-02, AIWA-DOC-03, STAR-POL-01, STAR-POL-02, STAR-POL-03, STAR-POL-04, DVE-STD-01 |
 
 ---
 
@@ -242,7 +242,7 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 5.2.3 A payload that clears governance evaluation at the Sieve receives a Release Receipt. The Release Receipt is the GovernanceToken issued by Mḗh₁n̥s confirming that the payload has cleared the Sieve and is authorised for the requested processing operation.
 
-5.2.4 No processing operation within the DVE may proceed without a valid Release Receipt for the applicable payload and processing operation. This is an absolute requirement. No override mechanism exists at the DVE layer.
+5.2.4 No processing operation within the DVE may proceed without a valid Release Receipt for the applicable payload and processing operation. DVE does not maintain an override capability for this requirement.
 
 ### 5.3 Personal Policy Token and Group Policy
 
