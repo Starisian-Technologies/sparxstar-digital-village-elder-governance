@@ -1,0 +1,48 @@
+# .gitignore — SPARXSTAR Digital Village Elder Governance Repository
+# Copyright (c) 2026 Starisian Technologies and AI West Africa.
+# All rights reserved. Proprietary and confidential.
+
+# OS artefacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor artefacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.env
+.venv
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Temporary files
+/tmp/
+*.tmp
+*.temp
+
+# Archive directory (excluded from CI outputs — not from git)
+# archive/**  ← intentionally tracked, excluded from output generation only
+
+# Do NOT gitignore outputs/ — generated DOCX and PDF are committed by CI

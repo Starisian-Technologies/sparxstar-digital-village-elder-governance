@@ -1,0 +1,116 @@
+# Copyright (c) 2026 Starisian Technologies and AI West Africa.
+# All rights reserved. Proprietary and confidential.
+# CONFIDENTIAL · PATENT PENDING
+
+name: Generate Governance Document Outputs
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths-ignore:
+      - "outputs/**"
+      - "archive/**"
+      - "README.md"
+      - "AGENTS.md"
+      - ".github/workflows/**"
+      - ".github/templates/**"
+
+jobs:
+  generate-outputs:
+    name: Convert Markdown → DOCX → PDF
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      # ── Install toolchain ────────────────────────────────────────────────
+      - name: Install Pandoc and LibreOffice
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice
+
+      # ── Prepare output directories ───────────────────────────────────────
+      - name: Create output directories
+        run: |
+          mkdir -p outputs/docx outputs/pdf
+
+      # ── Convert MD → DOCX ───────────────────────────────────────────────
+      - name: Convert Markdown to DOCX
+        run: |
+          TEMPLATE=".github/templates/governance-reference.docx"
+
+          SOURCE_DIRS=(
+            "dve/framework"
+            "dve/standards"
+            "dve/controls"
+            "dve/procedures"
+            "dve/registries"
+            "aiwa/documents"
+            "aiwa/policy"
+            "aiwa/constitutional"
+            "aiwa/governance"
+            "starisian/policy"
+          )
+
+          converted=0
+          for dir in "${SOURCE_DIRS[@]}"; do
+            if [ ! -d "$dir" ]; then
+              continue
+            fi
+            for md_file in "$dir"/*.md; do
+              [ -f "$md_file" ] || continue
+              filename=$(basename "$md_file" .md)
+              out="outputs/docx/${filename}.docx"
+
+              if [ -f "$TEMPLATE" ]; then
+                pandoc "$md_file" \
+                  --from markdown \
+                  --to docx \
+                  --reference-doc="$TEMPLATE" \
+                  --output "$out"
+              else
+                pandoc "$md_file" \
+                  --from markdown \
+                  --to docx \
+                  --output "$out"
+              fi
+
+              echo "DOCX: $out"
+              converted=$((converted + 1))
+            done
+          done
+
+          echo "Total DOCX files generated: $converted"
+
+      # ── Convert DOCX → PDF ───────────────────────────────────────────────
+      - name: Convert DOCX to PDF
+        run: |
+          converted=0
+          for docx_file in outputs/docx/*.docx; do
+            [ -f "$docx_file" ] || continue
+            libreoffice --headless --convert-to pdf "$docx_file" --outdir outputs/pdf/
+            echo "PDF: outputs/pdf/$(basename "$docx_file" .docx).pdf"
+            converted=$((converted + 1))
+          done
+          echo "Total PDF files generated: $converted"
+
+      # ── Commit outputs back to the branch ───────────────────────────────
+      - name: Commit generated outputs
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add outputs/
+          if git diff --staged --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "[ci] regenerate governance document outputs"
+            git push
+          fi
