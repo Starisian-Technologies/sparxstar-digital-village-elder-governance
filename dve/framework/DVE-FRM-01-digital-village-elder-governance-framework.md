@@ -80,9 +80,9 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 | Layer | Institution | Role |
 |---|---|---|
 | Governance Authority | AI West Africa (AIWA) | Governance, stewardship, contributor rights, cultural governance, dataset permission authority |
-| Infrastructure Authority | Starisian Technologies | Software, infrastructure, AI systems, patents, platform operations |
-| Operational Enforcement | Digital Village Elder (DVE) | Governance-integrated operational stack — the bridge between AIWA policy and Starisian infrastructure |
-| Platform Foundation | SPARXSTAR | Core platform and infrastructure layer on which DVE runs |
+| Infrastructure Authority | Starisian Technologies | Computational governance and semantic rights infrastructure; provenance-aware systems development; SPARXSTAR platform and DVE operations; patent and IP authority |
+| Operational Enforcement | Digital Village Elder (DVE) | Governance enforcement layer running on SPARXSTAR — bridge between AIWA governance authority and Starisian infrastructure authority |
+| Platform Foundation | SPARXSTAR | Executable governance platform providing tokenized semantic governance, provenance continuity, computational rights enforcement, and royalty-aware processing of governed Works |
 
 2.1.2 These four layers are institutionally and legally distinct. No layer subsumes, owns, or controls another layer's authority domain. Documents within this repository must not conflate or collapse these layers.
 
@@ -102,16 +102,16 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 ### 2.3 Starisian Technologies
 
-2.3.1 Starisian Technologies is an independent company incorporated in California. Starisian is the developer and operator of the SPARXSTAR platform and the DVE operational stack. Starisian holds the technical authority for:
+2.3.1 Starisian Technologies is an independent company incorporated in California. Starisian is a computational governance and semantic rights infrastructure company that develops provenance-aware systems for governed Works, semantic knowledge environments, computational permissions, and royalty-aware participation across AI-capable systems. Starisian develops and operates the SPARXSTAR platform and the DVE operational stack. Starisian holds the technical authority for:
 
 (a) SPARXSTAR platform design, architecture, and operation;
 (b) DVE infrastructure design and implementation;
-(c) Software development governance and engineering standards;
-(d) AI systems design and AI processing infrastructure;
+(c) Provenance-aware executable governance infrastructure design, development, and operation;
+(d) Semantic governance systems, computational access control, and cryptographic governance artifact sealing;
 (e) Platform security, resilience, and operational continuity;
 (f) Patent and intellectual property protection of Starisian's technology assets.
 
-2.3.2 Starisian Technologies does not hold governance authority over AIWA's classification decisions, contributor rights determinations, or cultural protection designations. Starisian's authority is infrastructure authority — the authority to determine how approved governance operations are implemented safely and reliably.
+2.3.2 Starisian Technologies does not hold governance authority over AIWA's classification decisions, contributor rights determinations, or cultural protection designations. Starisian's authority is infrastructure authority — the authority to determine how approved governance operations are implemented safely and reliably within the SPARXSTAR platform.
 
 2.3.3 Starisian's infrastructure policies — documented in the STAR-POL series — establish the engineering and operational constraints within which AIWA governance rules are implemented.
 
@@ -129,9 +129,9 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 ### 2.5 SPARXSTAR
 
-2.5.1 SPARXSTAR is the core platform and infrastructure layer developed and operated by Starisian Technologies on which DVE runs. SPARXSTAR provides the foundational computational, storage, networking, and services infrastructure on which DVE operational components are deployed.
+2.5.1 SPARXSTAR is the executable governance platform developed and operated by Starisian Technologies. SPARXSTAR provides the foundational infrastructure for tokenized semantic governance, provenance continuity, computational rights enforcement, attribution preservation, collective policy inheritance, and royalty-aware processing of governed Works and semantic structures. DVE runs on SPARXSTAR as the governance enforcement layer of the platform.
 
-2.5.2 SPARXSTAR is not a governance entity. SPARXSTAR does not hold governance authority over AIWA's decisions, nor does SPARXSTAR exercise independent authority over contributor works or cultural materials.
+2.5.2 SPARXSTAR is not a governance entity. SPARXSTAR does not hold governance authority over AIWA's decisions, nor does SPARXSTAR exercise independent authority over contributor works or cultural materials. SPARXSTAR provides the computational environment within which AIWA governance rules, as enforced by DVE, are executed.
 
 ---
 

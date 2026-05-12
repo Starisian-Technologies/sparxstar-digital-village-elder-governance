@@ -6,7 +6,7 @@ CONFIDENTIAL · PATENT PENDING
 
 # SPARXSTAR Digital Village Elder — Governance Repository
 
-A governance-aware digital infrastructure framework defining the relationship between AIWA governance systems, Starisian technical infrastructure, and the Digital Village Elder (DVE) operational stack for culturally grounded AI, language preservation, educational publishing, and contributor rights stewardship.
+A governance documentation repository for the AIWA–Starisian–DVE ecosystem. Starisian Technologies develops provenance-aware executable governance infrastructure for Works, semantic knowledge systems, and AI-capable computational environments. AIWA is the governance and stewardship authority. DVE enforces AIWA governance rules through the SPARXSTAR executable governance platform.
 
 ---
 
@@ -15,9 +15,9 @@ A governance-aware digital infrastructure framework defining the relationship be
 | Layer | Institution | Role |
 |---|---|---|
 | Governance Authority | AI West Africa (AIWA) | Governance, stewardship, contributor rights, cultural governance, dataset permission authority |
-| Infrastructure Authority | Starisian Technologies | Software, infrastructure, AI systems, patents, platform operations |
-| Operational Enforcement | Digital Village Elder (DVE) | Governance-integrated operational stack — the bridge between AIWA policy and Starisian infrastructure |
-| Platform Foundation | SPARXSTAR | Core platform and infrastructure layer |
+| Infrastructure Authority | Starisian Technologies | Computational governance and semantic rights infrastructure; provenance-aware systems; SPARXSTAR and DVE operations; patents |
+| Operational Enforcement | Digital Village Elder (DVE) | Governance enforcement layer running on SPARXSTAR — bridge between AIWA governance authority and Starisian infrastructure authority |
+| Platform Foundation | SPARXSTAR | Executable governance platform: tokenized semantic governance, provenance continuity, computational rights enforcement, attribution preservation, royalty-aware processing of governed Works |
 
 > Starisian Technologies operates the DVE infrastructure environment configured to enforce applicable AIWA governance policies and contributor permissions.
 
