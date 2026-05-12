@@ -144,8 +144,10 @@ Always use these terms consistently:
 
 | Term | Definition |
 |---|---|
-| Contributor | A person who submits a work to AIWA through an authorized intake channel |
+| Contributor | A person who submits a work to AIWA through an authorised intake channel |
 | Work | An intellectual creation fixed in tangible form, submitted to AIWA |
+| Chain of Title | The documented ownership history and authorisation record establishing a contributor's legal authority to grant rights in a Work, including all assignments, licences, contributor consents, publishing rights, master rights, synchronisation rights, sample clearances, AI model output rights, and third-party permissions |
+| Computational Rights | Rights to use a Work in AI training, inference, model development, or other computational processing — separate and distinct from distribution, streaming, synchronisation, archival, translation, corpus development, and public display rights |
 | Folklore | Expression of community cultural heritage with no identifiable individual author, transmitted through generations |
 | TCE | Traditional Cultural Expression — protected under Gambian law |
 | Governed artifact | A work that has entered the DVE governed pipeline |
@@ -171,7 +173,7 @@ Every new document must include:
 ```markdown
 | Field | Value |
 |---|---|
-| Document ID | [SERIES]-[TYPE]-[NUMBER]-[short-name] |
+| Document ID | [e.g., DVE-FRM-01, AIWA-DOC-01, STAR-POL-01] |
 | Version | 1.0 |
 | Status | Draft / Active / Normative / Superseded |
 | Classification | CONFIDENTIAL or CONFIDENTIAL · PATENT PENDING |

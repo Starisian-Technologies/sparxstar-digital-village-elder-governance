@@ -1,7 +1,6 @@
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 
 # STAR-POL-03: Data Governance and Classification
@@ -52,7 +51,7 @@ CONFIDENTIAL · PATENT PENDING
 
 2.2.1 Retention periods for governed artifacts are determined by AIWA's governance policies. Starisian implements retention periods as required by AIWA policy and applicable law.
 
-2.2.2 ArtifactGovernanceDeclaration records are retained permanently. This requirement is not subject to contributor revocation or AIWA deletion instructions, as ArtifactGovernanceDeclaration records are governance records, not personal data records.
+2.2.2 ArtifactGovernanceDeclaration records are retained permanently as governance records. Retention of ArtifactGovernanceDeclaration records is required to preserve provenance chain integrity and is not subject to contributor revocation or AIWA deletion instructions directed at the artifact itself. Where an ArtifactGovernanceDeclaration contains identity references that constitute personal data under applicable law, those identity references are subject to applicable data protection obligations, which are addressed in accordance with DVE-FRM-01, Section 10.4.
 
 ### 2.3 Deletion Capability
 

@@ -1,7 +1,6 @@
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 
 # AIWA-DOC-03: Process and Procedures for Contributor Intake
@@ -47,20 +46,34 @@ CONFIDENTIAL · PATENT PENDING
 2.2.1 Contributor consent must be recorded in the ArtifactGovernanceDeclaration at the time of intake. The consent record must specify:
 
 (a) The identity of the consenting party (contributor or community-authorised representative);
-(b) The specific uses consented to;
+(b) The specific rights categories consented to, recorded separately per category in accordance with AIWA-DOC-01, Section 3.3 (Distribution, Streaming, Synchronisation, Archival, Translation, Corpus Development, Computational Rights, Public Display);
 (c) Any temporal limits on consent;
 (d) Any applicable Group Policy constraints;
 (e) The date and channel through which consent was given.
 
-### 2.3 Initial Classification
+2.2.2 Consent to one rights category does not constitute consent to any other rights category. Computational Rights consent must be obtained and recorded separately from all other rights categories. Absent an explicit Computational Rights consent record, no Computational Rights processing may be authorised by the Sieve.
 
-2.3.1 At intake, every work must be assigned an initial artifact category in accordance with AIWA-DOC-01 (Governance Artifact Taxonomy). The initial category determines the default dataset classification tier and cultural restriction status applicable to the artifact.
+### 2.3 Chain of Title Verification
 
-2.3.2 Community representatives submitting folklore or TCEs must provide the applicable Group Policy declaration at intake. Absent a Group Policy declaration, the work is assigned individual contributor defaults, which may not adequately protect community rights.
+2.3.1 Before a work may enter the DVE governance pipeline, the contributor must provide sufficient documentation to verify the Chain of Title for the Work, as defined in AIWA-DOC-01, Section 3.2.
 
-### 2.4 Provenance Documentation
+2.3.2 Chain of Title verification must confirm:
 
-2.4.1 The following provenance information must be recorded at intake:
+(a) The contributor's legal authority to submit the Work to AIWA;
+(b) The absence of conflicting third-party rights that would prevent the consented uses;
+(c) Disclosure of any prior publication, assignment, licence, or encumbrance affecting the Work.
+
+2.3.3 Works with an incomplete or unverifiable Chain of Title are not admitted to intake. AIWA may place such works in a pre-intake review state pending resolution of Chain of Title defects.
+
+### 2.4 Initial Classification
+
+2.4.1 At intake, every work must be assigned an initial artifact category in accordance with AIWA-DOC-01 (Governance Artifact Taxonomy). The initial category determines the default dataset classification tier and cultural restriction status applicable to the artifact.
+
+2.4.2 Community representatives submitting folklore or TCEs must provide the applicable Group Policy declaration at intake. Absent a Group Policy declaration, the work is assigned individual contributor defaults, which may not adequately protect community rights.
+
+### 2.5 Provenance Documentation
+
+2.5.1 The following provenance information must be recorded at intake:
 
 (a) The identity of the contributor or community-authorised representative;
 (b) The date and channel of submission;

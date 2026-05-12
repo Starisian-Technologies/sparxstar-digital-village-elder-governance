@@ -15,7 +15,6 @@ on:
       - "README.md"
       - "AGENTS.md"
       - ".github/workflows/**"
-      - ".github/templates/**"
 
 jobs:
   generate-outputs:

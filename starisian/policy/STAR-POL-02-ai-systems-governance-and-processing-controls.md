@@ -1,7 +1,6 @@
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 
 # STAR-POL-02: AI Systems Governance and Processing Controls
@@ -59,6 +58,8 @@ CONFIDENTIAL · PATENT PENDING
 3.1.1 AI models trained on governed artifacts within the DVE are governed artifacts and remain within Starisian's custody within the DVE governance boundary.
 
 3.1.2 Distribution or deployment of AI models trained on governed artifacts outside the DVE governance boundary requires AIWA authorisation. Starisian enforces this requirement through platform access controls.
+
+3.1.3 Starisian's technical custody of AI models trained on governed artifacts does not constitute ownership of those models, nor does it confer intellectual property rights over the content of the training data from which those models were derived. Custody is infrastructure custody only.
 
 ---
 

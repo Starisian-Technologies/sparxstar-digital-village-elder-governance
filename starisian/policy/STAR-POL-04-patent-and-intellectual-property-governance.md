@@ -1,7 +1,6 @@
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 
 # STAR-POL-04: Patent and Intellectual Property Governance
@@ -61,9 +60,11 @@ CONFIDENTIAL · PATENT PENDING
 
 3.1.2 Starisian's technical custody of governed artifacts within the DVE is infrastructure custody — it does not confer intellectual property rights over the content of governed artifacts.
 
-### 3.2 AIWA Governance Materials
+3.1.3 AI processing of a governed Work within DVE does not transfer ownership of that Work, or of any rights in that Work, to Starisian Technologies. Computational processing is an infrastructure operation. It does not create a new chain of title or grant Starisian any ownership interest in the processed Work or in any output derived from it.
 
-3.2.1 AIWA governance documents are the intellectual property of AI West Africa and Starisian Technologies jointly, as specified in each document's copyright notice. Starisian's joint authorship of governance documents does not grant Starisian authority over AIWA's governance decisions.
+### 3.2 Governance Document Ownership
+
+3.2.1 AIWA governance documents issued under AIWA authority are the intellectual property of AI West Africa. Documents issued under joint AIWA–Starisian authority are the intellectual property of both institutions jointly, as specified in each document's closing copyright notice. Starisian's participation in drafting joint governance documents does not grant Starisian governance authority over AIWA's governance decisions.
 
 ---
 

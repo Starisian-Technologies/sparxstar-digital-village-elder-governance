@@ -1,7 +1,6 @@
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 
 # DVE-FRM-01: Digital Village Elder Governance Framework
@@ -14,7 +13,7 @@ CONFIDENTIAL · PATENT PENDING
 | Classification | CONFIDENTIAL · PATENT PENDING |
 | Date | May 2026 |
 | Issuing Authority | Joint — AI West Africa and Starisian Technologies |
-| Cross-Reference | AIWA-DOC-01, AIWA-DOC-02, AIWA-DOC-03, STAR-POL-01, STAR-POL-02, STAR-POL-03, STAR-POL-04, DVE-STD-01 |
+| Cross-Reference | AIWA-DOC-01, AIWA-DOC-02, AIWA-DOC-03, STAR-POL-01, STAR-POL-02, STAR-POL-03, STAR-POL-04, STAR-POL-05 (pending), DVE-STD-01 |
 
 ---
 
@@ -155,7 +154,7 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 (c) **Dataset use permissions** — AIWA defines the scope of permitted AI dataset use for each governed artifact. DVE processing controls must enforce AIWA dataset use permissions without modification.
 
-(d) **Revocation instructions** — AIWA may issue revocation instructions at any time. DVE is required to implement revocation instructions within the timeframes defined in DVE-PROC-XX (Revocation and Deletion Procedures, pending).
+(d) **Revocation instructions** — AIWA may issue revocation instructions at any time. DVE is required to implement revocation instructions within the timeframes defined in DVE-PROC-01 (Revocation and Deletion Procedures, pending).
 
 (e) **Provenance requirements** — AIWA establishes the provenance documentation standards applicable to all governed artifacts. DVE must generate, maintain, and preserve provenance records in conformance with AIWA standards.
 
@@ -238,7 +237,7 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 5.2.1 The Sieve is the DVE governance enforcement gate through which all payloads must pass before processing. The Sieve evaluates each payload against applicable AIWA governance policies, contributor permissions, and cultural restriction designations.
 
-5.2.2 A payload that fails governance evaluation at the Sieve is placed in QUARANTINE. QUARANTINE is a DVE holding state — it is not deletion. Payloads in QUARANTINE are retained pending governance resolution. The specific QUARANTINE handling procedures are defined in DVE-PROC (QUARANTINE Management Procedures).
+5.2.2 A payload that fails governance evaluation at the Sieve is placed in QUARANTINE. QUARANTINE is a DVE holding state — it is not deletion. Payloads in QUARANTINE are retained pending governance resolution. The specific QUARANTINE handling procedures are defined in DVE-PROC-02 (QUARANTINE Management Procedures, pending).
 
 5.2.3 A payload that clears governance evaluation at the Sieve receives a Release Receipt. The Release Receipt is the GovernanceToken issued by Mḗh₁n̥s confirming that the payload has cleared the Sieve and is authorised for the requested processing operation.
 
@@ -530,13 +529,13 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 12.2.1 A DVE governance model deployment for a non-AIWA institution must:
 
-(a) Maintain the three-layer authority model: a governance authority, an infrastructure authority, and an enforcement operational stack;
+(a) Maintain the four-layer governance model: a governance authority, an infrastructure authority, a governance enforcement layer (DVE), and an executable governance platform (SPARXSTAR);
 (b) Implement equivalent ArtifactGovernanceDeclaration, Sieve, and Release Receipt mechanisms;
 (c) Implement equivalent contributor permission, cultural restriction, and revocation handling mechanisms;
 (d) Implement equivalent audit and traceability requirements;
 (e) Not represent itself as operating under AIWA governance authority unless AIWA has explicitly authorised such representation.
 
-12.2.2 Governance interoperability is a Starisian Technologies platform capability, subject to Starisian's patent rights and licensing authority. Deployment of the DVE governance model for non-AIWA institutions requires Starisian's authorisation and is governed by STAR-POL (Governance Interoperability Policy).
+12.2.2 Governance interoperability is a Starisian Technologies platform capability, subject to Starisian's patent rights and licensing authority. Deployment of the DVE governance model for non-AIWA institutions requires Starisian's authorisation and is governed by STAR-POL-05 (Governance Interoperability Policy, pending).
 
 ### 12.3 Future Governance Evolution
 

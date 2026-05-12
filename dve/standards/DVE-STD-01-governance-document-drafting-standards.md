@@ -1,7 +1,6 @@
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 
 # DVE-STD-01: Governance Document Drafting Standards
@@ -215,17 +214,16 @@ than to:
 
 ### 5.1 Document Header
 
-5.1.1 Every document must open with the proprietary licence comment block:
+5.1.1 Every governance series document must open with the proprietary classification comment block. The form of the block is identical for all documents. It is a confidentiality and classification notice — it is **not** a copyright assertion. Copyright is stated in the closing footer, which varies by Issuing Authority:
 
 ```
 <!--
-Copyright (c) 2026 Starisian Technologies and AI West Africa.
-All rights reserved. Proprietary and confidential.
 CONFIDENTIAL · PATENT PENDING
+Proprietary and confidential. All rights reserved.
 -->
 ```
 
-5.1.2 Every document must include a metadata table with the following fields: Document ID, Version, Status, Classification, Date, Issuing Authority, Cross-Reference.
+5.1.2 Every governance series document (AIWA-*, STAR-POL-*, DVE-*) must include a metadata table with the following fields: Document ID, Version, Status, Classification, Date, Issuing Authority, Cross-Reference. Repository meta-files (README.md, AGENTS.md) are not governance series documents and are not required to carry metadata tables.
 
 5.1.3 Status values are: `Draft`, `Active`, `Normative`, `Superseded`.
 
@@ -239,9 +237,9 @@ CONFIDENTIAL · PATENT PENDING
 
 5.2.2 Headings use `##` (section), `###` (subsection). Clause numbers appear at the start of each paragraph within the subsection.
 
-### 5.3 AIWA Document Footer
+### 5.3 Document Footer
 
-5.3.1 Every document issued under AIWA authority must close with:
+5.3.1 Every governance series document issued under AIWA authority must close with:
 
 ```
 *End of [DOCUMENT-ID]*
@@ -263,6 +261,14 @@ CONFIDENTIAL · PATENT PENDING
 *Copyright (c) 2026 Starisian Technologies. All rights reserved. Proprietary and confidential. CONFIDENTIAL · PATENT PENDING*
 ```
 
+5.3.3 Documents issued under Starisian Technologies authority alone must close with:
+
+```
+*End of [DOCUMENT-ID]*
+
+*Copyright (c) 2026 Starisian Technologies. All rights reserved. Proprietary and confidential. CONFIDENTIAL · PATENT PENDING*
+```
+
 ---
 
 ## 6. Terminology Standards
@@ -275,6 +281,8 @@ CONFIDENTIAL · PATENT PENDING
 |---|---|
 | Contributor | A person who submits a work to AIWA through an authorised intake channel |
 | Work | An intellectual creation fixed in tangible form, submitted to AIWA |
+| Chain of Title | The documented ownership history and authorisation record establishing a contributor's legal authority to grant rights in a Work, including all assignments, licences, contributor consents, publishing rights, master rights, synchronisation rights, sample clearances, AI model output rights, and third-party permissions |
+| Computational Rights | Rights to use a Work in AI training, inference, model development, or other computational processing operations — a rights category separate and distinct from distribution, streaming, synchronisation, archival, translation, corpus development, and public display rights |
 | Folklore | Expression of community cultural heritage with no identifiable individual author, transmitted through generations |
 | TCE | Traditional Cultural Expression — protected under Gambian law |
 | Governed artifact | A work that has entered the DVE governed pipeline |
@@ -305,7 +313,7 @@ CONFIDENTIAL · PATENT PENDING
 7.1.1 Use the following checklist before finalising any document in this series:
 
 **Structure**
-- [ ] Licence comment block is present and correct
+- [ ] Classification comment block is present and correct
 - [ ] Metadata table is complete (ID, Version, Status, Classification, Date, Issuing Authority, Cross-Reference)
 - [ ] Sections use `##`, subsections use `###`, clauses use decimal numbering (1.1.1)
 - [ ] All cross-references are accurate — document IDs and clause numbers have been verified
