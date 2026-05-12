@@ -38,7 +38,7 @@ Proprietary and confidential. All rights reserved.
 2.1.1 Patent Family C covers the technical architecture of the DVE governance enforcement mechanisms, including:
 
 (a) Personal Policy Token — the short-lived contributor governance preference instrument;
-(b) ArtifactGovernanceDeclaration — the permanent, immutable governance record;
+(b) ArtifactGovernanceDeclaration — the persistent, tamper-evident governance record;
 (c) Three-tier token resolution — the hierarchical resolution of Personal Policy, Group Policy, and institutional governance authority;
 (d) Cryptographic governance declarations that travel with governed artifacts.
 

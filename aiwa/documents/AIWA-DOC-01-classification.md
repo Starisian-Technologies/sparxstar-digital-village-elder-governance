@@ -113,6 +113,21 @@ Proprietary and confidential. All rights reserved.
 | AI Model | Tier 2 | Inherited from training dataset | Inherited from training dataset |
 | Dataset | Derived from composition | Derived from composition | Derived from composition |
 
+### 3.5 Derivative Governance
+
+3.5.1 A Derived Work inherits Governance Metadata from each source governed artifact that contributed to its creation. This is the Policy Inheritance principle: the most restrictive applicable governance constraint from any contributing source artifact governs the Derived Work, unless AIWA has expressly authorised a less restrictive governance profile.
+
+3.5.2 Derived Works are subject to the following additional governance requirements:
+
+(a) The Provenance Object for a Derived Work must reference all source governed artifacts and the processing operations that produced the derivation;
+(b) The ArtifactGovernanceDeclaration for a Derived Work must record the Release Receipts that authorised each processing step in its derivation;
+(c) Cultural restriction designations attached to any source artifact propagate automatically to the Derived Work;
+(d) Computational Rights restrictions attached to any source artifact propagate automatically to AI Model and Dataset artifacts derived from it.
+
+3.5.3 **Revocation propagation**: Revocation of a permission for a source governed artifact triggers a governance review of all Derived Works that relied upon that permission. AIWA determines the applicable remedy for affected Derived Works. Pending AIWA's determination, affected Derived Works are placed in QUARANTINE.
+
+3.5.4 **AI Model derivation governance**: An AI Model trained on, fine-tuned from, or derived from one or more governed artifacts inherits the most restrictive Governance State and dataset tier applicable to any artifact in its training dataset. The AI Model's ArtifactGovernanceDeclaration must record the full training dataset composition and the Release Receipts authorising each dataset use.
+
 ---
 
 *End of AIWA-DOC-01*

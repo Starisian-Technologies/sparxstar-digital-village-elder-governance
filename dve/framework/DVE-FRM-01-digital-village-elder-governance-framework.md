@@ -219,7 +219,7 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 ### 5.1 The ArtifactGovernanceDeclaration
 
-5.1.1 Every governed artifact within the DVE carries a permanent, immutable ArtifactGovernanceDeclaration. The ArtifactGovernanceDeclaration constitutes the binding governance record attached to the artifact at the time of intake classification.
+5.1.1 Every governed artifact within the DVE carries a persistent, tamper-evident ArtifactGovernanceDeclaration. The ArtifactGovernanceDeclaration constitutes the binding governance record attached to the artifact at the time of intake classification.
 
 5.1.2 The ArtifactGovernanceDeclaration records:
 
@@ -250,6 +250,43 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 5.3.2 Group Policy is the standing community governance authority declaration applicable to works submitted on behalf of a community, community group, or cultural group. Group Policy is senior to Personal Policy.
 
 5.3.3 Where a Group Policy is applicable, DVE must enforce Group Policy requirements regardless of any conflicting Personal Policy Token. The Group Policy hierarchy is defined in AIWA-POL (Contributor Rights and Consent Policy).
+
+### 5.4 Governance State Model
+
+5.4.1 Every governed artifact within the DVE is assigned a Governance State. The Governance State is the current operational status of the artifact within the DVE governance pipeline. The Governance State is recorded in the ArtifactGovernanceDeclaration and updated upon each qualifying governance event.
+
+5.4.2 The following Governance States are defined:
+
+| Governance State | Definition | Permitted Operations |
+|---|---|---|
+| ACTIVE | Artifact has cleared the Sieve and is authorised for the permissions recorded in its ArtifactGovernanceDeclaration | Processing operations authorised by current Release Receipts |
+| QUARANTINE | Artifact has failed Sieve evaluation or has been placed on governance hold by AIWA | No processing; retained pending governance resolution |
+| DISPUTED | A contested ownership claim or Chain of Title conflict has been lodged with AIWA; processing is suspended pending resolution | No processing; audit access only |
+| RESTRICTED | AIWA has imposed specific use restrictions that narrow the permissions in the ArtifactGovernanceDeclaration; permissions remain valid within the defined restriction scope | Processing operations within the restriction scope only |
+| REVOKED | AIWA has revoked one or more permissions. Revoked permissions are void prospectively. Prior operations completed under a valid Release Receipt before the revocation date remain authorised | No processing under revoked permissions; processing under surviving permissions remains subject to Sieve evaluation |
+| ARCHIVAL ONLY | AIWA has designated the artifact for preservation purposes only; no AI processing, distribution, or active use is permitted | Preservation and provenance record retention only |
+
+5.4.3 Governance State transitions are AIWA governance decisions, except that the DVE may autonomously transition an artifact to QUARANTINE upon Sieve failure. All other state transitions require an explicit AIWA instruction.
+
+5.4.4 Every Governance State transition generates a governance event in the audit log, recording the previous state, the new state, the triggering instruction or event, and the timestamp.
+
+### 5.5 Governance Metadata Definitions
+
+5.5.1 The following terms have canonical definitions within this framework. These definitions govern interpretation of all DVE-series documents and are binding on all parties operating within the DVE governance pipeline:
+
+5.5.2 **Governance Metadata** means the structured set of attributes attached to a governed artifact that define the governance parameters applicable to that artifact. Governance Metadata includes the Governance State, dataset classification tier, cultural restriction status, rights category permissions, provenance references, and applicable policy version identifiers.
+
+5.5.3 **Provenance Object** means the structured record documenting the origin, Chain of Title, and processing history of a governed artifact. The Provenance Object for a governed artifact includes: contributor identity reference, intake channel, intake date, Chain of Title documentation references, prior processing operations, Release Receipt references, and derivative relationship records where applicable.
+
+5.5.4 **ArtifactGovernanceDeclaration** (AGD) means the persistent, tamper-evident governance record attached to every governed artifact within the DVE. The AGD is created at intake, sealed upon completion of initial Sieve evaluation, and updated only through governance-authorised amendments that are themselves logged in the audit trail. The AGD is retained as a governance record even after artifact deletion. The AGD is subject to Patent Family C (Multi-Tiered Executable Governance).
+
+5.5.5 **Computational Rights Token** means the rights category record within the ArtifactGovernanceDeclaration that specifies the contributor's consent status for Computational Rights. The Computational Rights Token is distinct from tokens representing other rights categories. It records: the scope of Computational Rights consent (training, inference, fine-tuning, evaluation, or other specific operations), any temporal constraints, any processing entity constraints, and the Governance State applicable to Computational Rights.
+
+5.5.6 **Release Receipt** means the GovernanceToken issued by the Sieve (Mḗh₁n̥s) when a payload clears governance evaluation. The Release Receipt authorises a specific processing operation for a specific governed artifact. It is valid for the operation and scope stated, and does not authorise any other operation or scope. Release Receipts are logged in the audit trail.
+
+5.5.7 **Policy Inheritance** means the mechanism by which a derivative artifact or dataset composition inherits the Governance Metadata — including permissions, restrictions, cultural restriction designations, and Governance State constraints — from the source governed artifacts that contributed to its creation. Policy Inheritance operates by default: the most restrictive applicable governance constraint from any contributing source artifact governs the derivative artifact, unless AIWA has expressly authorised a less restrictive governance profile.
+
+5.5.8 **Governance State** means the current operational classification of a governed artifact within the DVE, as defined in §5.4.2. Governance State is a component of Governance Metadata and is recorded in the ArtifactGovernanceDeclaration.
 
 ---
 
@@ -449,17 +486,31 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 ### 10.3 Revocation Handling
 
-10.3.1 A contributor may request revocation of permissions through AIWA's authorised revocation channel. AIWA processes revocation requests and issues revocation instructions to DVE.
+10.3.1 A contributor may request revocation of permissions through AIWA's authorised revocation channel. AIWA processes revocation requests and issues revocation instructions to DVE. AIWA may also issue revocation instructions on its own initiative, including upon cultural reclassification, community override, or emergency restriction.
 
-10.3.2 Upon receipt of an AIWA revocation instruction, DVE must:
+10.3.2 **Prospective application**: Revocation of a rights category applies prospectively. It does not invalidate prior operations completed under a valid Release Receipt before the revocation date. Operations in progress at the time revocation is received must be completed or halted as determined by AIWA's revocation instruction.
 
-(a) Immediately prevent further processing of the affected artifact under the revoked permission;
-(b) Update the ArtifactGovernanceDeclaration to record the revocation and its effective date;
+10.3.3 **Per-rights-category revocation**: Revocation instructions specify the rights category or categories being revoked. Revocation of one rights category does not revoke other rights categories. The following per-category revocation rules apply:
+
+(a) **Computational Rights revocation**: Revocation of Computational Rights prevents all future AI training, inference, fine-tuning, and evaluation operations for the affected artifact. It does not affect distribution, streaming, or other non-computational permissions that remain valid.
+
+(b) **Distribution revocation**: Revocation of distribution rights prevents all further distribution of the artifact. Copies already distributed under prior valid Release Receipts are subject to AIWA's determination of applicable remedy.
+
+(c) **Community override**: A Group Policy declaration may revoke or restrict any individual contributor's permissions where the work is subject to community governance authority. Community override is effective immediately upon AIWA's instruction to DVE.
+
+(d) **Emergency restriction**: AIWA may issue an emergency restriction instruction placing an artifact in RESTRICTED state immediately, pending a full revocation or governance review. Emergency restrictions are effective upon receipt by DVE and do not require full revocation processing.
+
+(e) **Cultural reclassification**: Where AIWA reclassifies an artifact to a higher cultural restriction tier (e.g., from Tier 2 to Tier 3), the reclassification constitutes an implicit revocation of permissions that are no longer authorised at the new tier. DVE must implement cultural reclassification instructions with the same immediacy as explicit revocation instructions.
+
+10.3.4 Upon receipt of an AIWA revocation instruction, DVE must:
+
+(a) Immediately transition the affected artifact to REVOKED or RESTRICTED Governance State, as specified by the AIWA instruction;
+(b) Update the ArtifactGovernanceDeclaration to record the revocation, the rights categories affected, the effective date, and the instruction reference;
 (c) Identify all dataset compositions, AI processing operations, and derivative artifacts that relied upon the revoked permission;
-(d) Report the impact assessment to AIWA within the timeframe defined in DVE-PROC (Revocation Impact Assessment Procedures);
+(d) Report the impact assessment to AIWA within the timeframe defined in DVE-PROC-01 (Revocation and Deletion Procedures, pending);
 (e) Implement the disposition determined by AIWA for each affected downstream artifact.
 
-10.3.3 Revocation does not automatically require deletion of all downstream artifacts. Deletion is an AIWA governance decision. DVE implements deletion instructions as received. Pending AIWA's deletion decision, affected downstream artifacts are placed in QUARANTINE.
+10.3.5 Revocation does not automatically require deletion of all downstream artifacts. Deletion is an AIWA governance decision. DVE implements deletion instructions as received. Pending AIWA's deletion decision, affected downstream artifacts are placed in QUARANTINE.
 
 ### 10.4 Deletion Handling
 
@@ -468,9 +519,9 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 (a) Delete the specified artifact from the active DVE environment;
 (b) Delete all copies of the specified artifact within the DVE governance boundary, except where retention is required by applicable law or by AIWA governance policy;
 (c) Record the deletion event in the audit log, including the deletion instruction reference and the confirmation of deletion;
-(d) Report deletion completion to AIWA within the timeframe defined in DVE-PROC (Deletion Handling Procedures).
+(d) Report deletion completion to AIWA within the timeframe defined in DVE-PROC-01 (Revocation and Deletion Procedures, pending).
 
-10.4.2 Deletion of a governed artifact does not delete the ArtifactGovernanceDeclaration record associated with that artifact. ArtifactGovernanceDeclaration records are retained as permanent governance records.
+10.4.2 Deletion of a governed artifact does not delete the ArtifactGovernanceDeclaration record associated with that artifact. ArtifactGovernanceDeclaration records are retained as governance records subject to data protection obligations applicable to any identity references they contain, as addressed in STAR-POL-03.
 
 ---
 
@@ -495,15 +546,16 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 (b) ArtifactGovernanceDeclaration creation and all subsequent amendments;
 (c) Sieve evaluation decisions (pass and fail);
 (d) Release Receipt issuance;
-(e) QUARANTINE placement and release;
+(e) Governance State transitions (ACTIVE, QUARANTINE, DISPUTED, RESTRICTED, REVOKED, ARCHIVAL ONLY), including the triggering instruction and the previous state;
 (f) Dataset assembly operations and their governance basis;
 (g) AI processing operations and their Release Receipts;
-(h) Cultural restriction designation changes;
+(h) Cultural restriction designation changes and cultural reclassifications;
 (i) Contributor permission updates and Personal Policy Token minting;
 (j) Group Policy declarations and amendments;
-(k) Revocation instruction receipt and implementation;
+(k) Revocation instruction receipt, per-rights-category effect, and implementation status;
 (l) Deletion instruction receipt and implementation;
-(m) All governance escalations to AIWA.
+(m) Emergency restriction instructions and their resolution;
+(n) All governance escalations to AIWA.
 
 ### 11.3 Traceability Requirements
 

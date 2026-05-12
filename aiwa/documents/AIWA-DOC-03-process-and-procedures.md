@@ -93,7 +93,7 @@ Proprietary and confidential. All rights reserved.
 
 ### 3.2 ArtifactGovernanceDeclaration Finalisation
 
-3.2.1 Upon completion of intake and initial Sieve evaluation, the ArtifactGovernanceDeclaration is finalised and sealed. The finalised ArtifactGovernanceDeclaration is the permanent, immutable governance record for the artifact.
+3.2.1 Upon completion of intake and initial Sieve evaluation, the ArtifactGovernanceDeclaration is finalised and sealed. The finalised ArtifactGovernanceDeclaration is the persistent, tamper-evident governance record for the artifact.
 
 ---
 

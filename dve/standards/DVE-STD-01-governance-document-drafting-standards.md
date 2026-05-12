@@ -283,13 +283,18 @@ Proprietary and confidential. All rights reserved.
 | Work | An intellectual creation fixed in tangible form, submitted to AIWA |
 | Chain of Title | The documented ownership history and authorisation record establishing a contributor's legal authority to grant rights in a Work, including all assignments, licences, contributor consents, publishing rights, master rights, synchronisation rights, sample clearances, AI model output rights, and third-party permissions |
 | Computational Rights | Rights to use a Work in AI training, inference, model development, or other computational processing operations — a rights category separate and distinct from distribution, streaming, synchronisation, archival, translation, corpus development, and public display rights |
+| Governance State | The current operational classification of a governed artifact within the DVE (ACTIVE, QUARANTINE, DISPUTED, RESTRICTED, REVOKED, ARCHIVAL ONLY) |
+| Governance Metadata | The structured set of attributes attached to a governed artifact defining its governance parameters, including Governance State, dataset classification tier, cultural restriction status, rights category permissions, provenance references, and applicable policy version identifiers |
+| Provenance Object | The structured record documenting the origin, Chain of Title, and processing history of a governed artifact |
+| Policy Inheritance | The mechanism by which a derivative artifact inherits Governance Metadata from its source artifacts; the most restrictive constraint from any source governs the derivative, unless AIWA expressly authorises otherwise |
 | Folklore | Expression of community cultural heritage with no identifiable individual author, transmitted through generations |
 | TCE | Traditional Cultural Expression — protected under Gambian law |
 | Governed artifact | A work that has entered the DVE governed pipeline |
 | Sieve | The Mḗh₁n̥s governance enforcement gate |
 | QUARANTINE | The DVE holding state for payloads that fail governance evaluation — not deletion |
-| Release Receipt | The GovernanceToken issued by Mḗh₁n̥s when a payload clears the Sieve |
-| ArtifactGovernanceDeclaration | The permanent, immutable governance record attached to every governed artifact |
+| Release Receipt | The GovernanceToken issued by Mḗh₁n̥s when a payload clears the Sieve, authorising a specific processing operation for a specific artifact |
+| ArtifactGovernanceDeclaration | The persistent, tamper-evident governance record attached to every governed artifact |
+| Computational Rights Token | The rights category record within the ArtifactGovernanceDeclaration specifying the contributor's consent status and scope for Computational Rights |
 | Personal Policy Token | The short-lived contributor governance preference instrument minted by Sky Esu at release |
 | Group Policy | The standing community governance authority declaration, senior to Personal Policy |
 
