@@ -155,7 +155,7 @@ This statement governs the interpretation of all DVE documentation. Any provisio
 
 (c) **Dataset use permissions** — AIWA defines the scope of permitted AI dataset use for each governed artifact. DVE processing controls must enforce AIWA dataset use permissions without modification.
 
-(d) **Revocation instructions** — AIWA may issue revocation instructions at any time. DVE is required to implement revocation instructions within the timeframes defined in DVE-PROC (Revocation and Deletion Procedures).
+(d) **Revocation instructions** — AIWA may issue revocation instructions at any time. DVE is required to implement revocation instructions within the timeframes defined in DVE-PROC-XX (Revocation and Deletion Procedures, pending).
 
 (e) **Provenance requirements** — AIWA establishes the provenance documentation standards applicable to all governed artifacts. DVE must generate, maintain, and preserve provenance records in conformance with AIWA standards.
 
